@@ -36,7 +36,13 @@ class Campeon(models.Model):
 
 class Habilidad(models.Model):
     nombre = models.TextField(max_length=40)
-    ratio = models.IntegerField()
+    class Ratio(models.IntegerChoices):
+        AD = 0, _('Attack Damage')
+        AP = 1, _('Ability Power')
+        TRUEDAMAGE = 2, _('True damage')
+        APAD = 3, _('AP & AD')
+        APTD = 4, _('AD & True damage')
+    ratio = models.IntegerField(default = 0, choices=Ratio.choices)
     class Tecla(models.IntegerChoices):
         TECLA_Q = 0, _('Tecla Q')
         TECLA_W = 1, _('Tecla W')

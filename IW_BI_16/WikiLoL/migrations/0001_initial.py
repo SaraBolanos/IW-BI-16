@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nombre', models.TextField(max_length=40)),
-                ('ratio', models.IntegerField()),
+                ('ratio', models.IntegerField(choices=[(0, 'AD'), (1, 'AP')], default=0)),
                 ('tecla', models.IntegerField(choices=[(0, 'Tecla Q'), (1, 'Tecla W'), (2, 'Tecla E'), (3, 'Tecla R')], default=0)),
                 ('campeon', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='habilidades', to='WikiLoL.campeon')),
             ],
