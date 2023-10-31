@@ -26,8 +26,13 @@ class Campeon(models.Model):
         SHURIMA = 10, _('Shurima')
         TARGON = 11, _('Targon')
         ZAUN = 12, _('Zaun')
+        RUNETERRA = 13, _('Runeterra')
     region = models.IntegerField(default=0, choices = Region.choices)
-    añoSalida = models.DateField
+   
+    añoSalida = models.IntegerField(default = 2009, null = True)
+
+    def __str__(self):
+        return self.nombre 
 
 class Habilidad(models.Model):
     nombre = models.TextField(max_length=40)
