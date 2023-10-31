@@ -3,7 +3,8 @@ from . import views
 
 urlpatterns = [
 
-    #path('', views.nombreview, name = "nombre"),
+
+   path('listadoDeCampeones', views.listaCampeones, name="listaC"),
 
 
 
