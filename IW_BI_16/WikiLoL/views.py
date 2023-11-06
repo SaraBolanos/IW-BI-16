@@ -52,15 +52,16 @@ def detalleColecciones(request,id_coleccion):
 # ------ SKINS ------
 def listaSkins(request):
     skins = Skin.objects.order_by('nombre')
-    context =  {'coleccion_list':skins}
-    return render(request, 'trabajador.html', context)
+    context =  {'skin_list' : skins}
+    return render(request, 'listaSkins.html', context)
 
 
 def detalleSkins(request,id_skins):
-    skins = Skin.objects.get( pk = id_skins)
+    #skins = Skin.objects.get( pk = id_skins)
 
-    context = { 'login':True,'skins' : skins}
-
+    #context = { 'login':True,'skins' : skins}
+    skins = Skin.objects.order_by('nombre')
+    context =  {'coleccion_list':skins}
     return render(request, 'listaSkins.html', context)
 
 # ------ HABILIDADES ------

@@ -80,7 +80,7 @@ class Skin(models.Model):
     rareza = models.IntegerField(default=0, choices=Rareza.choices)
     nombre = models.TextField(max_length=50)
     coleccion = models.ForeignKey(Coleccion, on_delete=models.CASCADE, related_name="skins")
-    campeon = models.ForeignKey(Campeon, on_delete=models.CASCADE, related_name="skins_campeon")
+    campeon = models.ForeignKey(Campeon, on_delete = models.CASCADE, default=0)
     
     def __str__(self):
         return self.nombre 

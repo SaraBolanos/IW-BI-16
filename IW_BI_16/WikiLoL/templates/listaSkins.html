@@ -1,0 +1,11 @@
+<h1> LISTA DE SKINS</h1>
+<ul>
+
+{% for skin in skin_list %} 
+
+<li> <a href=" {%   url   'detalleSkin'  skin.id     %}">  {{skin.nombre}} </a></li>
+<p> {{skin.coleccion.nombre}}</p>
+<p> {{skin.campeon.nombre}}</p>
+
+{% endfor %}
+</ul>
