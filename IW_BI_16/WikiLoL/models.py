@@ -59,7 +59,6 @@ class Habilidad(models.Model):
 class Coleccion(models.Model):
     nombre = models.TextField(max_length=50)
     fechaSalida = models.DateField()
-    tematica = models.TextField(max_length=50)
     
     def __str__(self):
         return self.nombre 
@@ -81,6 +80,7 @@ class Skin(models.Model):
     rareza = models.IntegerField(default=0, choices=Rareza.choices)
     nombre = models.TextField(max_length=50)
     coleccion = models.ForeignKey(Coleccion, on_delete=models.CASCADE, related_name="skins")
+    campeon = models.ForeignKey(Campeon, on_delete=models.CASCADE, related_name="skins_campeon")
     
     def __str__(self):
         return self.nombre 

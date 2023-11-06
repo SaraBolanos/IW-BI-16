@@ -61,7 +61,7 @@ def detalleSkins(request,id_skins):
 
     context = { 'login':True,'skins' : skins}
 
-    return render(request, 'detalleT.html', context)
+    return render(request, 'listaSkins.html', context)
 
 # ------ HABILIDADES ------
 def listaHabilidad(request):
