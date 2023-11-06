@@ -1,0 +1,9 @@
+<h1> LISTA DE CAMPEONES</h1>
+<ul>
+
+{% for campeon in campeon_list %}
+
+<li> <a href=" {%   url   'detalleCamp'  campeon.id     %}">  {{campeon.nombre}} </a></li>
+
+{% endfor %}
+</ul>
