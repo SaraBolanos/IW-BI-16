@@ -11,23 +11,23 @@ class Campeon(models.Model):
         JUNGLE = 'Jungle'
         ADC = 'ADC'
         SUPPORT ='Support'
-    linea = models.IntegerField(null = True, choices = Linea.choices)
-    #class Region(models.IntegerChoices):
-     #   AGUAS_ESTANCADAS = 0, _('Aguas Estancadas')
-      #  CIUDAD_DE_BUNDLE = 1, _('Ciudad de Bundle')
-       # DEMACIA = 2, _('Demacia')
-        #EL_VACIO = 3, _('El Vacio')
-        #FRELJORD = 4, _('Freljord')
-        #ISLAS_DE_LA_SOMBRA = 5, _('Islas de la Sombra')
-        #IXTAL = 6, _('Ixtal')
-        #JONIA = 7, _('Jonia')
-        #NOXUS = 8, _('Noxus')
-        #PILTOVER = 9, _('Piltover')
-        #SHURIMA = 10, _('Shurima')
-        #TARGON = 11, _('Targon')
-        #ZAUN = 12, _('Zaun')
-        #RUNETERRA = 13, _('Runeterra')
-    region = models.IntegerField(default=0, choices = Region.choices)
+    linea = models.CharField(max_length=10, choices=Linea.choices, default=Linea.MID)
+    class Region(models.TextChoices):
+        AGUAS_ESTANCADAS = "Aguas Estancadas"
+        CIUDAD_DE_BUNDLE = "Ciudad de Bundle"
+        DEMACIA = "Demacia"
+        EL_VACIO = "El Vacio"
+        FRELJORD = "Freljord"
+        ISLAS_DE_LA_SOMBRA = "Islas de la Sombra"
+        IXTAL = "Ixtal"
+        JONIA = "Jonia"
+        NOXUS = "Noxus"
+        PILTOVER = "Piltover"
+        SHURIMA = "Shurima"
+        TARGON = "Targon"
+        ZAUN = "Zaun"
+        RUNETERRA = "Runeterra"    
+    region = models.CharField( max_length=25, choices=Region.choices, default=Region.AGUAS_ESTANCADAS)
     
     añoSalida = models.IntegerField(default = 2009, null = True)
 
