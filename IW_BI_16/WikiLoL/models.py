@@ -38,19 +38,19 @@ class Campeon(models.Model):
 
 class Habilidad(models.Model):
     nombre = models.TextField(max_length=40)
-    class Ratio(models.IntegerChoices):
-        AD = 0, _('Attack Damage')
-        AP = 1, _('Ability Power')
-        TRUEDAMAGE = 2, _('True damage')
-        APAD = 3, _('AP & AD')
-        APTD = 4, _('AD & True damage')
-    ratio = models.IntegerField(default = 0, choices=Ratio.choices)
-    class Tecla(models.IntegerChoices):
-        TECLA_Q = 0, _('Tecla Q')
-        TECLA_W = 1, _('Tecla W')
-        TECLA_E = 2, _('Tecla E')
-        TECLA_R = 3, _('Tecla R')
-    tecla = models.IntegerField(default=0, choices=Tecla.choices)
+    class Ratio(models.TextChoices):
+        AD = 'Attack Damage'
+        AP ='Ability Power'
+        TRUEDAMAGE ='True damage'
+        APAD = 'AP & AD'
+        APTD = 'AD & True damage'
+    ratio = models.CharField(max_length=25, choices=Ratio.choices, default=Ratio.AP)
+    class Tecla(models.TextChoices):
+        TECLA_Q ='Tecla Q'
+        TECLA_W ='Tecla W'
+        TECLA_E ='Tecla E'
+        TECLA_R ='Tecla R'
+    tecla = models.CharField(max_length=15, choices=Tecla.choices, default=Tecla.TECLA_Q)
     campeon = models.ForeignKey(Campeon, on_delete=models.CASCADE, related_name="habilidades")
     
     def __str__(self):
@@ -65,19 +65,14 @@ class Coleccion(models.Model):
 
 class Skin(models.Model):
     precio = models.IntegerField()
-    class Rareza(models.IntegerChoices):
-        BASICA = 0, _('Basica')
-        UNICA = 1, _('Unica')
-        CLASICA = 2, _('Clasica')
-        REAL = 3, _('Real')
-        IMPERIAL = 4, _('Imperial')
-        EPICA = 5, _('Epica')
-        LEGENDARIA = 6, _('Legendaria')
-        DEFINITIVA = 7, _('Definitiva')
-        HEXTECH = 8, _('Hextech')
-        LIMITADA = 9, _('Limitada')
-        VICTORIOSA = 10, _('Victoriosa')
-    rareza = models.IntegerField(default=0, choices=Rareza.choices)
+    class Rareza(models.TextChoices):
+        BASICA = 'Basica'
+        UNICA = 'Unica'
+        EPICA = 'Epica'
+        LEGENDARIA ='Legendaria'
+        DEFINITIVA = 'Definitiva'
+        MITICA ='Mitica'
+    rareza = models.CharField(max_length=15, choices=Rareza.choices, default=Rareza.BASICA)
     nombre = models.TextField(max_length=50)
     coleccion = models.ForeignKey(Coleccion, on_delete=models.CASCADE, related_name="skins")
     campeon = models.ForeignKey(Campeon, on_delete = models.CASCADE, default=0)
