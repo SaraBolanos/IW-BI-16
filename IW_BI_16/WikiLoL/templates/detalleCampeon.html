@@ -7,9 +7,18 @@
 
 <h3>Juega en esta linea {{campeon.linea}}</h3>
 
+<h3>Esta es su lista de habilidades:</h3>
+<ul>
+{% for habilidad in habilidades_list %}
 
+    { % if habilidad.campeon.nombre == campeon.nombre % } 
 
+        <li><a href=" {%   url   'detalleHab'  habilidad.id     %}">  {{habilidad.nombre}} </a></li>
 
+    { % endif % }
+
+{% endfor %}
+</ul>
 {% else %}
 <p>Hola usuario anonimo</p>
 

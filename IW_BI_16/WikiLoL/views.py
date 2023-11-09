@@ -30,7 +30,8 @@ def listaCampeones(request):
 
 def detalleCampeones(request,id_campeon):
     campeon = Campeon.objects.get(pk = id_campeon)
-    context = { 'login':True,'campeon' : campeon}
+    habilidad = Habilidad.objects.order_by('nombre')
+    context = { 'login':True,'campeon' : campeon, 'habilidades_list' : habilidad}
 
     return render(request, 'detalleCampeon.html', context)
 
@@ -72,7 +73,7 @@ def listaHabilidad(request):
 
 
 def detalleHabilidad(request,id_habilidad):
-    habilidad = Coleccion.objects.get( pk = id_habilidad)
+    habilidad = Habilidad.objects.get( pk = id_habilidad)
 
     context = { 'login':True,'habilidad' : habilidad}
 
