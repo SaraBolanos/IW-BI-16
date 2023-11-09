@@ -1,0 +1,9 @@
+<h1>{{coleccion.nombre}} - Lista de Skins</h1>
+
+<ul>
+    {% for skin in skin_list %}
+    {% if coleccion.nombre ==  skin.coleccion.nombre %}
+    <li><a href=" {%   url   'detalleSkin'  skin.id     %}">  {{skin.nombre}} </a></li>
+    {% endif %}
+    {% endfor %}
+    </ul>

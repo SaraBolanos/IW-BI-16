@@ -1,4 +1,5 @@
 {% if login %}
+<h1><a href=" {%   url   'listaCamp' %}">VOLVER</a></h1>
 <h1>Hola estas accediendo a la campeon {{campeon.nombre}}</h1>
 
 <h2> Esta es la region del campeon {{campeon.region}}</h2>
@@ -10,15 +11,25 @@
 <h3>Esta es su lista de habilidades:</h3>
 <ul>
 {% for habilidad in habilidades_list %}
-
-    { % if habilidad.campeon.nombre == campeon.nombre % } 
-
-        <li><a href=" {%   url   'detalleHab'  habilidad.id     %}">  {{habilidad.nombre}} </a></li>
-
-    { % endif % }
-
+{% if campeon.nombre ==  habilidad.campeon.nombre %}
+<li><a href=" {%   url   'detalleHab'  habilidad.id     %}">  {{habilidad.nombre}} - {{habilidad.tecla}} </a></li>
+{% endif %}
 {% endfor %}
 </ul>
+
+
+<h3>Esta es su lista de skins:</h3>
+<ul>
+{% for skin in skin_list %}
+{% if campeon.nombre ==  skin.campeon.nombre %}
+<li><a href=" {%   url   'detalleSkin'  skin.id     %}">  {{skin.nombre}} </a></li>
+{% endif %}
+{% endfor %}
+</ul>
+
+
+
+
 {% else %}
 <p>Hola usuario anonimo</p>
 

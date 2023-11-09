@@ -1,12 +1,9 @@
-<h1>Estas son las habilidades </h1>
+<h1>{{habilidad.nombre}}</h1>
+<h2>{{habilidad.tecla}}</h2>
+<h2>Tipo de daño -> {{habilidad.ratio}}</h2>
+
+<h2>Campeon -> <a href=" {%   url   'detalleCamp'  habilidad.campeon.id     %}">{{habilidad.campeon}}</a></h2>
 
 
-{% for habilidades in habilidades_list %} 
 
-<li> <a href=" {%   url   'detalleHab'  habilidades.id     %}">  {{habilidades.nombre}} </a></li>
 
-<p> {{habilidad.campeon.nombre}}</p>
-<img src = https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt99600d0a6ac88a3d/5f15f993e2505729b0a2b2fb/Icon_Yone_Q.jpg>
-
-{% endfor %}
-</ul>

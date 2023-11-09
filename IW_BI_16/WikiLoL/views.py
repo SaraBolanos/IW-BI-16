@@ -31,24 +31,26 @@ def listaCampeones(request):
 def detalleCampeones(request,id_campeon):
     campeon = Campeon.objects.get(pk = id_campeon)
     habilidad = Habilidad.objects.order_by('nombre')
-    context = { 'login':True,'campeon' : campeon, 'habilidades_list' : habilidad}
+    skin = Skin.objects.order_by('nombre')
+    context = { 'login':True,'campeon' : campeon, 'habilidades_list' : habilidad, 'skin_list' : skin}
 
     return render(request, 'detalleCampeon.html', context)
 
 # ------ COLECCIONES ------
 def listaColecciones(request):
     colecciones = Coleccion.objects.order_by('nombre')
-    context =  {'coleccion_list':colecciones}
+    skin = Skin.objects.order_by('nombre')
+    context =  {'coleccion_list':colecciones, 'skin_list' : skin}
     return render(request, 'coleccion.html', context)
 
 
 def detalleColecciones(request,id_coleccion):
     coleccion = Coleccion.objects.get( pk = id_coleccion)
 
+    skin = Skin.objects.order_by('nombre')
+    context = { 'login':True,'coleccion' : coleccion, 'skin_list' : skin}
 
-    context = { 'login':True,'coleccion' : coleccion}
-
-    return render(request, 'coleccion.html', context)
+    return render(request, 'detalleColeccion.html', context)
 
 # ------ SKINS ------
 def listaSkins(request):
@@ -58,12 +60,10 @@ def listaSkins(request):
 
 
 def detalleSkins(request,id_skins):
-    #skins = Skin.objects.get( pk = id_skins)
+    skin = Skin.objects.get( pk = id_skins)
 
-    #context = { 'login':True,'skins' : skins}
-    skins = Skin.objects.order_by('nombre')
-    context =  {'coleccion_list':skins}
-    return render(request, 'listaSkins.html', context)
+    context = { 'login':True,'skin' : skin}
+    return render(request, 'detalleSkin.html', context)
 
 # ------ HABILIDADES ------
 def listaHabilidad(request):
