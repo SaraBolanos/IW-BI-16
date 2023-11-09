@@ -36,9 +36,9 @@ def detalleCampeones(request,id_campeon):
 
 # ------ COLECCIONES ------
 def listaColecciones(request):
-    collecciones = Coleccion.objects.order_by('nombre')
-    context =  {'coleccion_list':collecciones}
-    return render(request, 'trabajador.html', context)
+    colecciones = Coleccion.objects.order_by('nombre')
+    context =  {'coleccion_list':colecciones}
+    return render(request, 'coleccion.html', context)
 
 
 def detalleColecciones(request,id_coleccion):
@@ -47,7 +47,7 @@ def detalleColecciones(request,id_coleccion):
 
     context = { 'login':True,'coleccion' : coleccion}
 
-    return render(request, 'detalleT.html', context)
+    return render(request, 'coleccion.html', context)
 
 # ------ SKINS ------
 def listaSkins(request):
@@ -67,8 +67,8 @@ def detalleSkins(request,id_skins):
 # ------ HABILIDADES ------
 def listaHabilidad(request):
     habilidades = Habilidad.objects.order_by('nombre')
-    context =  {'coleccion_list':habilidades}
-    return render(request, 'trabajador.html', context)
+    context =  {'habilidades_list':habilidades}
+    return render(request, 'habilidad.html', context)
 
 
 def detalleHabilidad(request,id_habilidad):
@@ -76,4 +76,4 @@ def detalleHabilidad(request,id_habilidad):
 
     context = { 'login':True,'habilidad' : habilidad}
 
-    return render(request, 'detalleT.html', context)
+    return render(request, 'habilidad.html', context)

@@ -12,7 +12,7 @@ urlpatterns = [
    path('listaSkins', views.listaSkins, name= 'listaSkin' ),
    path('detalleSkins/<int:id_skins>', views.detalleSkins, name= 'detalleSkin' ),
    path('listaHab', views.listaHabilidad, name= 'listaHab' ),
-   path('detalleHab', views.detalleHabilidad, name= 'detalleHab' )
+   path('detalleHab/<int:id_habilidad>', views.detalleHabilidad, name= 'detalleHab' )
 
 
 ]

@@ -1,0 +1,11 @@
+<h1>Estas son las Colecciones de Skins</h1>
+
+<ul>
+
+    {% for coleccion in coleccion_list %}
+    
+    <li> <a href=" {%   url   'detalleCamp'  coleccion.id     %}">  {{coleccion.nombre}} </a></li>
+    <img src =  https://static.wikia.nocookie.net/leagueoflegends/images/3/35/Spirit_Blossom_2020_Promo_11.jpg/revision/latest/thumbnail/width/360/height/360?cb=20200728163714/>
+    
+    {% endfor %}
+    </ul>
