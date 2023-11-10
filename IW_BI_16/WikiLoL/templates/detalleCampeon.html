@@ -1,14 +1,14 @@
 {% if login %}
 <h1><a href=" {%   url   'listaCamp' %}">VOLVER</a></h1>
-<h1>Hola estas accediendo a la campeon {{campeon.nombre}}</h1>
+<h1>Estas accediendo al campeon {{campeon.nombre}}</h1>
 
-<h2> Esta es la region del campeon {{campeon.region}}</h2>
+<h2>Region del campeon -> {{campeon.region}}</h2>
 
-<h2>Este es el año de salida {{campeon.añoSalida}}</h2>
+<h2>Año de salida -> {{campeon.añoSalida}}</h2>
 
-<h3>Juega en esta linea {{campeon.linea}}</h3>
+<h3>Linea -> {{campeon.linea}}</h3>
 
-<h3>Esta es su lista de habilidades:</h3>
+<h3>Lista de habilidades:</h3>
 <ul>
 {% for habilidad in habilidades_list %}
 {% if campeon.nombre ==  habilidad.campeon.nombre %}
@@ -18,7 +18,7 @@
 </ul>
 
 
-<h3>Esta es su lista de skins:</h3>
+<h3>Lista de skins:</h3>
 <ul>
 {% for skin in skin_list %}
 {% if campeon.nombre ==  skin.campeon.nombre %}
@@ -31,6 +31,6 @@
 
 
 {% else %}
-<p>Hola usuario anonimo</p>
+<p>usuario anonimo</p>
 
 {%endif%}
