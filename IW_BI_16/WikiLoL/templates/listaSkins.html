@@ -6,7 +6,8 @@
 <li> <a href=" {%   url   'detalleSkin'  skin.id     %}">  {{skin.nombre}} </a></li>
 <p> {{skin.coleccion.nombre}}</p>
 <p> {{skin.campeon.nombre}}</p>
-<img src = https://prod.api.assets.riotgames.com/public/v1/asset/lol/13.21.1/CHAMPION_SKIN/777001/ICON/>
+
+<img src = {{skin.imagen}} />
 
 {% endfor %}
 </ul>

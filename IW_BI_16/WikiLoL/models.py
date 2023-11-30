@@ -30,6 +30,7 @@ class Campeon(models.Model):
     region = models.CharField( max_length=25, choices=Region.choices, default=Region.AGUAS_ESTANCADAS)
     
     añoSalida = models.IntegerField(default = 2009, null = True)
+    imagen = models.TextField(max_length=100)
 
     def __str__(self):
         return self.nombre 
@@ -52,7 +53,7 @@ class Habilidad(models.Model):
         TECLA_R ='Tecla R'
     tecla = models.CharField(max_length=15, choices=Tecla.choices, default=Tecla.TECLA_Q)
     campeon = models.ForeignKey(Campeon, on_delete=models.CASCADE, related_name="habilidades")
-    
+    imagen = models.TextField(max_length=100)
     def __str__(self):
         return self.nombre 
 
@@ -76,6 +77,6 @@ class Skin(models.Model):
     nombre = models.TextField(max_length=50)
     coleccion = models.ForeignKey(Coleccion, on_delete=models.CASCADE, related_name="skins")
     campeon = models.ForeignKey(Campeon, on_delete = models.CASCADE, default=0)
-    
+    imagen = models.TextField(max_length=100)
     def __str__(self):
         return self.nombre 
