@@ -15,7 +15,17 @@ def main(request):
     habilidad = Habilidad.objects.order_by('nombre')
     return render(request, 'main.html')
 
+# ------ CAMPEONES -----
 
+class CampeonesListView(ListView):
+    model = Campeon
+    queryset = Campeon.objects.order_by('nombre')
+    template_name = 'listaCampeones.html'
+  
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context)
+        return context
 
 def detalleCampeones(request,id_campeon):
     campeon = Campeon.objects.get(pk = id_campeon)
@@ -26,11 +36,15 @@ def detalleCampeones(request,id_campeon):
     return render(request, 'detalleCampeon.html', context)
 
 # ------ COLECCIONES ------
-def listaColecciones(request):
-    colecciones = Coleccion.objects.order_by('nombre')
-    skin = Skin.objects.order_by('nombre')
-    context =  {'coleccion_list':colecciones, 'skin_list' : skin}
-    return render(request, 'coleccion.html', context)
+class ColeccionesListView(ListView):
+    model = Coleccion
+    queryset = Coleccion.objects.order_by('nombre')
+    template_name = 'coleccion.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context)
+        return context
 
 
 def detalleColecciones(request,id_coleccion):
@@ -68,13 +82,3 @@ def detalleHabilidad(request,id_habilidad):
 
     return render(request, 'habilidad.html', context)
 
-
-class CampeonesListView(ListView):
-    model = Campeon
-    queryset = Campeon.objects.order_by('nombre')
-    template_name = 'listaCampeones.html'
-  
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        print(context)
-        return context

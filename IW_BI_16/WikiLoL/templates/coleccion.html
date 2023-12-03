@@ -3,7 +3,7 @@
 
 <ul>
 
-    {% for coleccion in coleccion_list %}
+    {% for coleccion in object_list %}
     
     <li> <a href=" {%   url   'detalleCol'  coleccion.id     %}">  {{coleccion.nombre}} </a></li>
    
