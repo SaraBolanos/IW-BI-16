@@ -71,7 +71,8 @@ def detalleHabilidad(request,id_habilidad):
 
 class CampeonesListView(ListView):
     model = Campeon
-    template_name = 'listaCampeones.hmtl'
+    queryset = Campeon.objects.order_by('nombre')
+    template_name = 'listaCampeones.html'
   
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
