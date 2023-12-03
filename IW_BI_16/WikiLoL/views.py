@@ -1,4 +1,6 @@
+from typing import Any
 from django.shortcuts import render
+from django.views.generic import ListView
 
 # Create your views here.
 from django.http import HttpResponse
@@ -14,19 +16,6 @@ def main(request):
     return render(request, 'main.html')
 
 
-# Create your views here.
-def listaCampeones(request):
-    campeon = Campeon.objects.order_by('nombre')
-    output = ', '.join([e.nombre for e in campeon])
-    return HttpResponse(output)
-
-# ------ CAMPEONES ------
-def listaCampeones(request):
-    campeon = Campeon.objects.order_by('nombre')
-
-    context = {'campeon_list' : campeon}
-
-    return render(request, 'listaCampeones.html', context)
 
 def detalleCampeones(request,id_campeon):
     campeon = Campeon.objects.get(pk = id_campeon)
@@ -78,3 +67,13 @@ def detalleHabilidad(request,id_habilidad):
     context = { 'login':True,'habilidad' : habilidad}
 
     return render(request, 'habilidad.html', context)
+
+
+class CampeonesListView(ListView):
+    model = Campeon
+    template_name = 'listaCampeones.hmtl'
+  
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context)
+        return context
