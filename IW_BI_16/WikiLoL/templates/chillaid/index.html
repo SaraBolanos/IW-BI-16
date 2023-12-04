@@ -66,7 +66,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="bgded overlay" style="background-image:url('{% static "chillaid/images/demo/backgrounds/01.png" %}');">
+<div class="bgded overlay" style="background-image:url('{{ object.imagen }}');">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <article>
@@ -88,7 +88,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <ul class="nospace group btmspace-80 elements elements-four">
         <li class="one_quarter">
           <article><a href="#"><i class="fas fa-hand-rock"></i></a>
-            <h6 class="heading">Feugiat fermentum</h6>
+            <h6 class="heading">{{ habilidades.0.nombre }}</h6>
             <p>Ac orci proin porttitor lacus eget mi pellentesque non.</p>
           </article>
         </li>

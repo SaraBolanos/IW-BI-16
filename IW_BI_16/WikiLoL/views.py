@@ -47,6 +47,8 @@ class CampeonesDetailView(DetailView):
         context = super(CampeonesDetailView,
              self).get_context_data(*args, **kwargs)
         # add extra field 
+        campeon = self.object
+        habilidades = Habilidad.objects.filter(campeon=campeon)[:4]
         # context["category"] = "MISC"        
         return context
     
