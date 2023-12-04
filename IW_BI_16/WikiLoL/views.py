@@ -1,6 +1,7 @@
 from typing import Any
 from django.shortcuts import render
 from django.views.generic import ListView
+from django.views import View
 
 # Create your views here.
 from django.http import HttpResponse
@@ -8,12 +9,21 @@ from django.http import HttpResponse
 from .models import Campeon, Habilidad, Coleccion, Skin
 
 
-def main(request):
-    campeon = Campeon.objects.order_by('nombre')
-    coleccion = Coleccion.objects.order_by('nombre')
-    skin = Skin.objects.order_by('precio')
-    habilidad = Habilidad.objects.order_by('nombre')
-    return render(request, 'main.html')
+class MainView(View):
+    template_name = 'chillaid/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = {
+            'campeon': Campeon.objects.order_by('nombre'),
+            'coleccion': Coleccion.objects.order_by('nombre'),
+            'skin': Skin.objects.order_by('precio'),
+            'habilidad': Habilidad.objects.order_by('nombre'),
+        }
+        return context
+
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data()
+        return render(request, self.template_name, context)
 
 # ------ CAMPEONES -----
 

@@ -4,8 +4,8 @@ from .views import *
 
 urlpatterns = [
 
-
-   path('Main', views.main, name='Main'),
+   path('MainView', MainView.as_view(), name = 'Main'),
+   #path('Main', views.main, name='Main'),
    path('listaCampeones', CampeonesListView.as_view(), name='listaCamp'),
    path('listaColecciones', ColeccionesListView.as_view(), name='listaCol'),
    path('detalleCampeones/<int:id_campeon>', views.detalleCampeones, name= 'detalleCamp' ),
@@ -15,6 +15,7 @@ urlpatterns = [
    path('detalleSkins/<int:id_skins>', views.detalleSkins, name= 'detalleSkin' ),
    path('listaHab', views.listaHabilidad, name= 'listaHab' ),
    path('detalleHab/<int:id_habilidad>', views.detalleHabilidad, name= 'detalleHab' ),
+   
    
 
 
