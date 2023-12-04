@@ -2,6 +2,7 @@ from typing import Any
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views import View
+from django.views.generic.detail import DetailView
 
 # Create your views here.
 from django.http import HttpResponse
@@ -37,13 +38,18 @@ class CampeonesListView(ListView):
         print(context)
         return context
 
-def detalleCampeones(request,id_campeon):
-    campeon = Campeon.objects.get(pk = id_campeon)
-    habilidad = Habilidad.objects.order_by('nombre')
-    skin = Skin.objects.order_by('nombre')
-    context = { 'login':True,'campeon' : campeon, 'habilidades_list' : habilidad, 'skin_list' : skin}
-
-    return render(request, 'detalleCampeon.html', context)
+class CampeonesDetailView(DetailView):
+    model = Campeon
+    template_name='chillaid/index.html'
+    
+     # override context data
+    def get_context_data(self, *args, **kwargs):
+        context = super(CampeonesDetailView,
+             self).get_context_data(*args, **kwargs)
+        # add extra field 
+        # context["category"] = "MISC"        
+        return context
+    
 
 # ------ COLECCIONES ------
 class ColeccionesListView(ListView):

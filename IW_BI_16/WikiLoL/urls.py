@@ -7,11 +7,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
 
-   path('MainView', MainView.as_view(), name = 'Main'),
+   path('Main', MainView.as_view(), name = 'Main'),
    #path('Main', views.main, name='Main'),
    path('listaCampeones', CampeonesListView.as_view(), name='listaCamp'),
    path('listaColecciones', ColeccionesListView.as_view(), name='listaCol'),
-   path('detalleCampeones/<int:id_campeon>', views.detalleCampeones, name= 'detalleCamp' ),
+   #path('detalleCampeones/<int:id_campeon>', views.detalleCampeones, name= 'detalleCamp' ),
+   path('detalleCampeones/<int:pk>/', CampeonesDetailView.as_view(), name='detalleCamp'),
    #path('listaColecciones', views.listaColecciones, name= 'listaCol' ),
    path('detalleColecciones/<int:id_coleccion>', views.detalleColecciones, name= 'detalleCol' ),
    path('listaSkins', views.listaSkins, name= 'listaSkin' ),
