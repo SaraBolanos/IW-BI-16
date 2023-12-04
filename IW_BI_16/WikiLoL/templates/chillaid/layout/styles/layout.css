@@ -58,6 +58,7 @@ File: Layout CSS
 .elements article i{width:60px; height:60px; line-height:60px; margin-bottom:30px; font-size:1.6rem; text-align:center; border-radius:50%;}
 .elements article .heading{font-size:1.2rem; font-weight:700;}
 .elements article p{margin:0; line-height:normal;}
+.elements article img {border-radius: 50%;}
 
 /* Introblocks */
 #introblocks{display:block; position:relative; margin:-160px 0 130px 0; z-index:1;}/* 160px => 80px + container padding */
@@ -356,6 +357,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .elements article:hover{color:#FFFFFF; background-color:#97A9BD;}/* Default */
 .elements article a i{color:#FFFFFF; background-color:#97A9BD;}/* Default */
 .elements article:hover a i{color:#97A9BD; background-color:#FFFFFF;}/* Default */
+
 
 /* ###### DELETE THE FOLLOWING IF ONLY THE DEFAULT COLOUR IS REQUIRED ###### */
 #introblocks .elements li article{color:#FFFFFF; background-color:#97A9BD;}/* Blue */
