@@ -119,7 +119,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'WikiLoL', 'templates', 'chillaid', 'layout', 'style'),
+    os.path.join(BASE_DIR, 'WikiLoL', 'templates'),
 ]
 
 # Default primary key field type
