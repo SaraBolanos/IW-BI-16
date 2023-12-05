@@ -11,7 +11,7 @@ from .models import Campeon, Habilidad, Coleccion, Skin
 
 
 class MainView(View):
-    template_name = 'chillaid/index.html'
+    template_name = 'chillaid/main.html'
 
     def get_context_data(self, **kwargs):
         context = {
@@ -40,7 +40,7 @@ class CampeonesListView(ListView):
 
 class CampeonesDetailView(DetailView):
     model = Campeon
-    template_name='chillaid/index.html'
+    template_name='chillaid/campeondetalles.html'
     
      # override context data
     def get_context_data(self, *args, **kwargs):
