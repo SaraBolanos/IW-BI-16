@@ -11,11 +11,23 @@ Licence URI: https://www.os-templates.com/template-terms
 -->
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+
+
+
+
 <head>
 <title>WikiLoL</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="{% static 'chillaid/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+<link href="{% static 'chillaid/layout/styles/style.css' %}" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+
+
+
+
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -118,13 +130,28 @@ Licence URI: https://www.os-templates.com/template-terms
     </section>
     <!-- ################################################################################################ -->
     <section class="group shout">
-      <figure class="one_half first"> <img src=" {{ skins.0.imagen }}" alt="{{ skins.0.nombre }}">
-        <figcaption class="heading"><a href="#">{{ skins.0.nombre }}</a></figcaption>
-      </figure>
-      <figure class="one_half"> <img src=" {{ skins.1.imagen }}" alt="{{ skins.1.nombre }}">
-        <figcaption class="heading"><a href="#">{{ skins.1.nombre }}</a></figcaption>
-      </figure>
-    </section>
+    <div id= "SARA">
+  
+    <ul id="steps" class="roller">
+      <li>{{ skins.0.nombre }} </li>
+      <li>{{ skins.1.nombre }}</li>
+      <li>{{ skins.2.nombre }}</li>
+      <li>04</li>
+      <li>05</li>
+    </ul>
+    <div id="titles">
+      <ul class="roller">
+        <li>
+          <h2><img src=" {{ skins.0.imagen }}" alt="{{ skins.0.nombre }}"></h2>
+        </li>
+        <li>
+          <h2><img src=" {{ skins.1.imagen }}" alt="{{ skins.1.nombre }}"></h2>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+    
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
@@ -436,6 +463,13 @@ Licence URI: https://www.os-templates.com/template-terms
 <script src="{% static 'chillaid/layout/scripts/jquery.mobilemenu.js' %}"></script>
 <!-- Homepage specific -->
 <script src="{% static 'chillaid/layout/scripts/jquery.easypiechart.min.js' %}"></script>
+
+
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+
+<script src="{% static 'chillaid/layout/scripts/index.js' %}"></script>
 <!-- / Homepage specific -->
 </body>
 </html>
