@@ -31,7 +31,7 @@ class MainView(View):
 class CampeonesListView(ListView):
     model = Campeon
     queryset = Campeon.objects.order_by('nombre')
-    template_name = 'listaCampeones.html'
+    template_name = 'chillaid/pages/gallery.html'
   
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
