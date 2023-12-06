@@ -67,6 +67,8 @@ class Coleccion(models.Model):
     
     def __str__(self):
         return self.nombre 
+    def get_absolute_url(self):
+        return reverse('detalleCol', args=[str(self.id)])
 
 class Skin(models.Model):
     precio = models.IntegerField()

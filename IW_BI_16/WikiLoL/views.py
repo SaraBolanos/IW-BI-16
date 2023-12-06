@@ -59,7 +59,7 @@ class CampeonesDetailView(DetailView):
 class ColeccionesListView(ListView):
     model = Coleccion
     queryset = Coleccion.objects.order_by('nombre')
-    template_name = 'coleccion.html'
+    template_name = 'chillaid/listaColecciones.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -67,6 +67,18 @@ class ColeccionesListView(ListView):
         return context
 
 
+class ColeccionesDetailView(DetailView):
+    model = Coleccion
+    template_name = 'detalleColeccion.html'
+    def get_context_data(self, **kwargs):
+        context = super(ColeccionesDetailView,
+            self).get_context_data(*args, **kwargs)
+        coleccion = self.object
+        skins = Skin.objects.filter(coleccion=coleccion)
+        context['skins'] = skins
+        return context
+        
+    
 def detalleColecciones(request,id_coleccion):
     coleccion = Coleccion.objects.get( pk = id_coleccion)
 
