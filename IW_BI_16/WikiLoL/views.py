@@ -69,23 +69,20 @@ class ColeccionesListView(ListView):
 
 class ColeccionesDetailView(DetailView):
     model = Coleccion
-    template_name = 'detalleColeccion.html'
-    def get_context_data(self, **kwargs):
+    template_name = 'chillaid/detalleColeccion.html'
+    def get_context_data(self,*args, **kwargs):
         context = super(ColeccionesDetailView,
             self).get_context_data(*args, **kwargs)
         coleccion = self.object
         skins = Skin.objects.filter(coleccion=coleccion)
         context['skins'] = skins
         return context
+    def get_object(self, queryset=None):
+        id_coleccion = self.kwargs.get('id_coleccion')
+        return Coleccion.objects.get(pk=id_coleccion)
         
     
-def detalleColecciones(request,id_coleccion):
-    coleccion = Coleccion.objects.get( pk = id_coleccion)
 
-    skin = Skin.objects.order_by('nombre')
-    context = { 'login':True,'coleccion' : coleccion, 'skin_list' : skin}
-
-    return render(request, 'detalleColeccion.html', context)
 
 # ------ SKINS ------
 def listaSkins(request):

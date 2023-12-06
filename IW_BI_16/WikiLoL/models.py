@@ -86,3 +86,5 @@ class Skin(models.Model):
     imagen = models.TextField(max_length=100)
     def __str__(self):
         return self.nombre 
+    def get_absolute_url(self):
+        return reverse('detalleSkin', args=[str(self.id)])
