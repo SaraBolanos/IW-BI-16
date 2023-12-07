@@ -49,7 +49,7 @@ class CampeonesDetailView(DetailView):
         # add extra field 
         campeon = self.object
         habilidades = Habilidad.objects.filter(campeon=campeon)[:4]
-        skins = Skin.objects.filter(campeon=campeon)[:2]
+        skins = Skin.objects.filter(campeon=campeon)[:5]
         context['habilidades'] = habilidades   
         context ['skins'] = skins
         return context

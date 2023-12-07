@@ -83,7 +83,7 @@ File: Layout CSS
 .team figure a{}
 .team figure img{}
 .team figure figcaption{padding:20px 10px; line-height:1; border:solid; border-width:0 1px 1px 1px;}
-.team figure strong{display:block; margin-bottom:8px; font-size:1.4rem; font-weight:400;}
+.team figure strong{g margin-bottom:8px; font-size:1.4rem; font-weight:400;}
 .team figure em{display:block; font-style:normal; font-size:.8rem;}
 
 /* Easy Pie Charts */
@@ -497,6 +497,10 @@ table a, #comments a{background-color:inherit;}
 
 	#pageintro article, #pageintro article p{max-width:none;}
 	#pageintro .heading{font-size:2rem;}
+
+	#one_third{
+		background_color = color.red;
+	}
 
 	.sectiontitle{max-width:none;}
 	.shout figure, .team li, #latest > li{margin:0 auto 50px;}

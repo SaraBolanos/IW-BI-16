@@ -85,7 +85,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <ul class="nospace group elements elements-three">
       {% for skin in skins %}
       <li class="one_third">
-        <article><a href="#"><i class="fas fa-hourglass-half"></i></a>
+        <article><img src=" {{ skin.imagen }}" alt="{{ skin.nombre }}">
           <a href="{{ skin.get_absolute_url }}"> {{skin.nombre}}</a>
           <p>{{skin.nombre}}</p>
         </article>

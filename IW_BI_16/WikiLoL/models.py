@@ -65,6 +65,7 @@ class Coleccion(models.Model):
     nombre = models.TextField(max_length=50)
     fechaSalida = models.DateField()
     
+    imagen = models.TextField(max_length=100, null = True, blank= True)
     def __str__(self):
         return self.nombre 
     def get_absolute_url(self):
