@@ -15,7 +15,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <title>WikiLoL | Campeones</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="{% static 'chillaid/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+<link href="{% static 'chillaid/layout/styles/layout _campeones.css' %}" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -46,8 +46,8 @@ Licence URI: https://www.os-templates.com/template-terms
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Campeones</a></li>
+      <li><a href="/WikiLoL/Main">Home</a></li>
+      <li><a href="/WikiLoL/listaCampeones">Campeones</a></li>
     </ul>
     <!-- ################################################################################################ -->
   </div>
@@ -79,16 +79,11 @@ Licence URI: https://www.os-templates.com/template-terms
       <nav class="pagination">
         <ul>
           <li><a href="#">&laquo; Previous</a></li>
-          <li><a href="#">1</a></li>
+          <li class="current"><strong>1</strong></li>
           <li><a href="#">2</a></li>
           <li><strong>&hellip;</strong></li>
           <li><a href="#">6</a></li>
-          <li class="current"><strong>7</strong></li>
-          <li><a href="#">8</a></li>
-          <li><a href="#">9</a></li>
-          <li><strong>&hellip;</strong></li>
-          <li><a href="#">14</a></li>
-          <li><a href="#">15</a></li>
+          <li><a href="#">7</a></li>
           <li><a href="#">Next &raquo;</a></li>
         </ul>
       </nav>
@@ -106,7 +101,6 @@ Licence URI: https://www.os-templates.com/template-terms
   <section id="ctdetails" class="hoc container clear"> 
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
-      <p class="nospace font-xs">Enim eleifend dignissim bibendum</p>
       <h6 class="heading font-x2">WikiLoL</h6>
     </div>
     <figure class="one_half first">
