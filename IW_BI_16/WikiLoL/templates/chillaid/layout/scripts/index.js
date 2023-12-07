@@ -72,7 +72,6 @@
 
     Application.prototype.update = function() {
       var y;
-      y = -(this.active_index * 100);
       this.$roller.css(DEMO.utils.transform, DEMO.utils.translate(0, y + "%"));
       this.$step.removeClass('active');
       this.$title.removeClass('active');
