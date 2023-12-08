@@ -85,17 +85,18 @@ class ColeccionesDetailView(DetailView):
 
 
 # ------ SKINS ------
+class SkinDetailView(DetailView):
+    model = Skin
+    template_name = 'chillaid/detalleSkin.html'
+    def get_context_data(self,*args, **kwargs):
+        context = super(SkinDetailView,
+            self).get_context_data(*args, **kwargs)
+        return context
+
 def listaSkins(request):
     skins = Skin.objects.order_by('nombre')
     context =  {'skin_list' : skins}
     return render(request, 'listaSkins.html', context)
-
-
-def detalleSkins(request,id_skins):
-    skin = Skin.objects.get( pk = id_skins)
-
-    context = { 'login':True,'skin' : skin}
-    return render(request, 'detalleSkin.html', context)
 
 # ------ HABILIDADES ------
 def listaHabilidad(request):

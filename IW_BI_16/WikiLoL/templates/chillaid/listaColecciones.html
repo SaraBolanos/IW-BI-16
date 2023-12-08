@@ -61,9 +61,9 @@ Licence URI: https://www.os-templates.com/template-terms
     <ul class="nospace group elements elements-three">
       {% for coleccion in object_list %}
       <li class="one_third">
-        <article><img src="{{ coleccion.imagen }}" alt="{{ coleccion.nombre }}"></i></a>
-          <a href="{{ coleccion.get_absolute_url }}"> {{coleccion.nombre}}</a>
-          <p>{{coleccion.fechaSalida}}</p>
+        <article> <a href="{{ coleccion.get_absolute_url }}"><img src="{{ coleccion.imagen }}" alt="{{ coleccion.nombre }}"></i></a>
+          <p> {{coleccion.nombre}} <br>
+          {{coleccion.fechaSalida}}</p>
         </article>
       </li>
        {% endfor %}

@@ -53,12 +53,11 @@ File: Layout CSS
 .elements-three li, .elements-four li{margin-bottom:50px;}
 .elements-three li:nth-last-child(-n+3), .elements-four li:nth-last-child(-n+4){margin-bottom:0;}/* Removes bottom margin from the last line of items - margin is restored in the media queries when items stack */
 .elements-three li:nth-child(3n+1), .elements-four li:nth-child(4n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
-.elements article {display: block;padding: 30px 15px;border-radius: 50px 0;text-align: center;height: 290px;box-shadow: 0px 0px 15px rgba(0,0,0,.3);box-sizing: border-box;}
-.elements article * {margin: 0 0 15px 0;padding: 0;line-height: 1;}
+.elements article{display:block; padding:30px 15px; border-radius:50px 0; text-align:center;}
+.elements article *{margin:0 0 15px 0; padding:0; line-height:1;}
 .elements article i{width:60px; height:60px; line-height:60px; margin-bottom:30px; font-size:1.6rem; text-align:center; border-radius:50%;}
 .elements article .heading{font-size:1.2rem; font-weight:700;}
 .elements article p{margin:0; line-height:normal;}
-.elements article img {border-radius: 50%;width: 90%;height:  70%;}
 
 /* Introblocks */
 #introblocks{display:block; position:relative; margin:-160px 0 130px 0; z-index:1;}/* 160px => 80px + container padding */
@@ -83,7 +82,7 @@ File: Layout CSS
 .team figure a{}
 .team figure img{}
 .team figure figcaption{padding:20px 10px; line-height:1; border:solid; border-width:0 1px 1px 1px;}
-.team figure strong{g margin-bottom:8px; font-size:1.4rem; font-weight:400;}
+.team figure strong{display:block; margin-bottom:8px; font-size:1.4rem; font-weight:400;}
 .team figure em{display:block; font-style:normal; font-size:.8rem;}
 
 /* Easy Pie Charts */
@@ -338,7 +337,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .row0, .row0 a{}
 .row1{color:#FFFFFF; background-color:#000000;}
 .row2{color:#474747; background-color:#F4F4F4;}
-.row3{color:#474747; background-color:#FFFFFF;}
+.row3{color:#474747; background-color:##282e39;}
 .row4{color:#A5A6AA; background-color:#000000;}
 .row5, .row5 a{color:#A5A6AA; background-color:#282E39;}
 .coloured{color:#FFFFFF; background-color:#97A9BD;}
@@ -357,7 +356,6 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .elements article:hover{color:#FFFFFF; background-color:#97A9BD;}/* Default */
 .elements article a i{color:#FFFFFF; background-color:#97A9BD;}/* Default */
 .elements article:hover a i{color:#97A9BD; background-color:#FFFFFF;}/* Default */
-
 
 /* ###### DELETE THE FOLLOWING IF ONLY THE DEFAULT COLOUR IS REQUIRED ###### */
 #introblocks .elements li article{color:#FFFFFF; background-color:#97A9BD;}/* Blue */
@@ -497,10 +495,6 @@ table a, #comments a{background-color:inherit;}
 
 	#pageintro article, #pageintro article p{max-width:none;}
 	#pageintro .heading{font-size:2rem;}
-
-	#one_third{
-		background_color = color.red;
-	}
 
 	.sectiontitle{max-width:none;}
 	.shout figure, .team li, #latest > li{margin:0 auto 50px;}
