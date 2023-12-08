@@ -44,7 +44,7 @@ File: Layout CSS
 
 /* Content Area
 --------------------------------------------------------------------------------------------------------------- */
-.container{padding-top: 1%;padding-left: 10%;padding-bottom: 10%;align-content: center;}
+.container{padding-top: 1%;padding-left: 0%;padding-bottom: 10%;align-content: center;}
 
 /* Content */
 .container .content{}
