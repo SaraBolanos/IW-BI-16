@@ -32,7 +32,9 @@ class Campeon(models.Model):
     
     añoSalida = models.IntegerField(default = 2009, null = True)
     imagen = models.TextField(max_length=100)
-
+    descripcion = models.TextField(max_length=1000, null = True, blank= True)
+    mote =  models.TextField(max_length=200, null = True, blank= True)
+    
     def __str__(self):
         return self.nombre 
     
