@@ -18,6 +18,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <link href="{% static 'chillaid/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
 <link href="{% static 'chillaid/layout/styles/style.css' %}" rel="stylesheet" type="text/css" media="all">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link href="{% static 'chillaid/layout/styles/magicscroll.css' %}"rel="stylesheet" type="text/css" media="all"/>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -49,7 +50,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <article>
       <h3 class="heading">{{ object.nombre }}</h3>
-      <p>{{object.descripcion}}</p>
+      <p>{{object.mote}}</p>
       <footer><a class="" href="#"></a></footer>
     </article>
     <!-- ################################################################################################ -->
@@ -61,57 +62,54 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
+    <p class="descripcion"> {{object.descripcion}} </p>
+
+
     <!-- ################################################################################################ -->
-    <section id="introblocks">
-      <ul class="nospace group btmspace-80 elements elements-four">
-        <li class="one_quarter">
-          <article>
-            <img src="{{ habilidades.0.imagen }}" alt="{{ habilidades.0.nombre }}">
-            <h6 class="heading">{{ habilidades.0.nombre }}</h6>
-            <p>Q</p>
-          </article>
-        </li>
-        <li class="one_quarter">
-          <article>
-            <img src="{{ habilidades.1.imagen }}" alt="{{ habilidades.1.nombre }}">
-            <h6 class="heading">{{ habilidades.1.nombre }}</h6>
-            <p>W</p>
-          </article>
-        </li>
-        <li class="one_quarter">
-          <article>
-            <img src="{{ habilidades.2.imagen }}" alt="{{ habilidades.2.nombre }}">
-            <h6 class="heading">{{ habilidades.2.nombre }}</h6>
-            <p>E</p>
-          </article>
-        </li>
-        <li class="one_quarter">
-          <article>
-            <img src="{{ habilidades.3.imagen }}" alt="{{ habilidades.3.nombre }}">
-            <h6 class="heading">{{ habilidades.3.nombre }}</h6>
-            <p>R</p>
-          </article>
-        </li>
-      </ul>
-    </section>
+    
     <!-- ################################################################################################ -->
-    <div id= "SARA">
-      {% for skin in skins %}
-      <ul id="steps" class="roller">
-      <li>{{ skin.nombre }} </li>
-    </ul>
-    <div id="titles">
-      <ul class="roller">
-        <li>
-          <h2><img src=" {{ skin.imagen }}" alt="{{ skin.nombre }}"></h2>
-        </li>
-    </ul>
+    <div class = "SARA">
+      <div class="MagicScroll" data-options="easing; loop: rewind; arrows: outside;step : 1;  items : 1; draggable: true;">
+        {% for skin in skins %}
+          <a href="{{ skins.nombre }}"><img src="{{ skin.imagen }}">{{ skin.nombre }}</a>
+          
+        {% endfor %}
+    </div>
   </div>
-    {% endfor %}
 
-  </div>    
+
+  <section id="introblocks">
+    <ul class="nospace group btmspace-80 elements elements-four">
+      <li class="one_quarter">
+        <article>
+          <img src="{{ habilidades.0.imagen }}" alt="{{ habilidades.0.nombre }}">
+          <h6 class="heading">{{ habilidades.0.nombre }}</h6>
+          <p>Q</p>
+        </article>
+      </li>
+      <li class="one_quarter">
+        <article>
+          <img src="{{ habilidades.1.imagen }}" alt="{{ habilidades.1.nombre }}">
+          <h6 class="heading">{{ habilidades.1.nombre }}</h6>
+          <p>W</p>
+        </article>
+      </li>
+      <li class="one_quarter">
+        <article>
+          <img src="{{ habilidades.2.imagen }}" alt="{{ habilidades.2.nombre }}">
+          <h6 class="heading">{{ habilidades.2.nombre }}</h6>
+          <p>E</p>
+        </article>
+      </li>
+      <li class="one_quarter">
+        <article>
+          <img src="{{ habilidades.3.imagen }}" alt="{{ habilidades.3.nombre }}">
+          <h6 class="heading">{{ habilidades.3.nombre }}</h6>
+          <p>R</p>
+        </article>
+      </li>
+    </ul>
   </section>
-
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
@@ -327,7 +325,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
 <script src="{% static 'chillaid/layout/scripts/index.js' %}"></script>
-
+<script src="{% static 'chillaid/layout/scripts/magicscroll.js' %}"></script>
 <!-- / Homepage specific -->
 </body>
 </html>

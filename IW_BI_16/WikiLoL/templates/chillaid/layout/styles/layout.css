@@ -31,17 +31,20 @@ File: Layout CSS
 
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
-#pageintro{padding:200px 0 280px;}/* 280px => 80px for #introblocks negative margin */
-
-#pageintro article, #pageintro article p{display:block; max-width:75%; margin:0 auto; text-align:center;}
+#pageintro{
+    padding-top: 15%;
+}/* 280px => 80px for #introblocks negative margin */
+#pageintro article{display:block;max-width:75%;margin:0 auto;text-align:center;margin-top: 20%;}
+#pageintro article p{display:block; max-width:75%; margin:0 auto;  text-align:center;}
 #pageintro article p{max-width:65%; line-height:2rem;}
-#pageintro .heading{margin-bottom:20px; font-size:4rem;}
+#pageintro .heading{margin-bottom:20px;font-size: 8rem;}
 #pageintro footer{margin-top:50px;}
+
 
 
 /* Content Area
 --------------------------------------------------------------------------------------------------------------- */
-.container{padding:80px 0;}
+.container{padding-top: 1%;padding-left: 10%;padding-bottom: 10%;align-content: center;}
 
 /* Content */
 .container .content{}
@@ -60,7 +63,10 @@ File: Layout CSS
 .elements article p{margin:0; line-height:normal;}
 
 /* Introblocks */
-#introblocks{display:block; position:relative; margin:-160px 0 130px 0; z-index:1;}/* 160px => 80px + container padding */
+#introblocks{display:block; position:relative; margin:30px 0 130px 0; z-index:1;}/* 160px => 80px + container padding */
+
+
+.descripcion {font-size: 120%;width: 80%;text-align: center;justify-content: center;display:flex;padding-left:20%;border: 2px solid #673AB7;padding: 10px;margin-left: 10%;margin-bottom: 5%;}
 
 /* Services */
 #services{}
@@ -358,6 +364,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .elements article:hover a i{color:#97A9BD; background-color:#FFFFFF;}/* Default */
 
 /* ###### DELETE THE FOLLOWING IF ONLY THE DEFAULT COLOUR IS REQUIRED ###### */
+#introblocks {margin_top: 20%;}
 #introblocks .elements li article{color:#FFFFFF; background-color:#97A9BD;}/* Blue */
 #introblocks .elements li article a i{color:#97A9BD; background-color:#FFFFFF;}/* Blue */
 #introblocks .elements li article:hover{color:#474747; background-color:#FFFFFF !important;}
