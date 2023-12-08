@@ -23,11 +23,8 @@
   Application = (function() {
     function Application() {
       this.update = bind(this.update, this);
-      this.next = bind(this.next, this);
-      this.previous = bind(this.previous, this);
-      this.onKeyup = bind(this.onKeyup, this);
+      this.handleScroll = bind(this.handleScroll, this);
       DEMO.utils = Utils;
-      this.$doc = $(document);
       this.$roller = $('.roller');
       this.$step = $('#steps li');
       this.$title = $('#titles li');
@@ -40,43 +37,44 @@
     }
 
     Application.prototype.observe = function() {
-      return this.$doc.on('keyup', this.onKeyup);
+      var _this = this;
+      $(document).on('wheel', function(e) {
+        if (!_this.maxIndexReached && e.originalEvent.deltaY > 0) {
+          _this.next();
+          e.preventDefault(); // Prevent default scroll behavior if not at max index
+        }
+        if (e.originalEvent.deltaY > 0) {
+          _this.next();
+        } else {
+          _this.previous();
+        }
+      });
     };
 
-    Application.prototype.onKeyup = function(e) {
-      var kc;
-      kc = e.keyCode;
-      if (kc === 38) {
-        e.preventDefault();
-        this.previous();
-      }
-      if (kc === 40) {
-        e.preventDefault();
-        return this.next();
-      }
-    };
-
+    
     Application.prototype.previous = function() {
       if (this.active_index > this.min) {
         this.active_index--;
-        return this.update();
+        this.update();
       }
     };
 
     Application.prototype.next = function() {
       if (this.active_index < this.max) {
         this.active_index++;
-        return this.update();
+        this.update();
+      }else {
+        this.maxIndexReached = true; // Set flag to true when the last active index is reached
       }
     };
 
     Application.prototype.update = function() {
-      var y;
-      this.$roller.css(DEMO.utils.transform, DEMO.utils.translate(0, y + "%"));
+      var y = this.active_index ; // Adjust this calculation based on your requirements
+      this.$roller.css(DEMO.utils.transform, DEMO.utils.translate(0, -y + "%")); // Updated y value calculation
       this.$step.removeClass('active');
       this.$title.removeClass('active');
       this.$step.eq(this.active_index).addClass('active');
-      return this.$title.eq(this.active_index).addClass('active');
+      this.$title.eq(this.active_index).addClass('active');
     };
 
     return Application;

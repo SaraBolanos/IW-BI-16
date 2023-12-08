@@ -16,8 +16,10 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="{% static 'chillaid/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
-<link href="{% static 'chillaid/layout/styles/style.css' %}" rel="stylesheet" type="text/css" media="all">
+<link href="{% static 'chillaid/layout/styles/style.css' %}" rel="stylesheet" type="text/css  " media="all">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link href="{% static 'chillaid/layout/styles/magicscroll.css' %}"rel="stylesheet" type="text/css" media="all"/>
+
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -95,28 +97,15 @@ Licence URI: https://www.os-templates.com/template-terms
       </ul>
     </section>
     <!-- ################################################################################################ -->
-    <div id= "SARA">
-      {% for skin in skins %}
-      <ul id="steps" class="roller">
-      <li>{{ skin.nombre }} </li>
-    </ul>
-    <div id="titles">
-      <ul class="roller">
-        <li>
-          <h2><img src=" {{ skin.imagen }}" alt="{{ skin.nombre }}"></h2>
-        </li>
-    </ul>
-  </div>
-    {% endfor %}
-
-  </div>    
-  </section>
+    
 
     <!-- ################################################################################################ -->
     <!-- / main body -->
-    <div class="clear"></div>
-  </main>
-</div>
+    <div class="MagicScroll" data-options="easing; loop: rewind;width: auto; height: auto; arrows: outside;step : 1;  items : 1; draggable: true;">
+      {% for skin in skins %}
+        <a href="{{ skins.nombre }}"><img src="{{ skin.imagen }}">{{ skin.nombre }}</a>
+      {% endfor %}
+  </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->    
@@ -327,7 +316,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
 <script src="{% static 'chillaid/layout/scripts/index.js' %}"></script>
-
+<script src="{% static 'chillaid/layout/styles/magicscroll.js' %}"></script>
 <!-- / Homepage specific -->
 </body>
 </html>
