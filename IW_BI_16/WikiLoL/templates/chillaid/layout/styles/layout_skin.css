@@ -148,18 +148,22 @@ File: Layout CSS
 	flex-direction: row;
 	justify-content: space-between; /* Espacio entre #campeon y #coleccion */
 	align-items: flex-start; /* Alineación vertical arriba */
-  }
+	padding-left: 0.5%;
+	padding-right: 0.5%;
+}
   
   #campeon,
   #coleccion {
 	position: relative;
-	width: 48%; /* Reducir el ancho para evitar desbordamiento */
+	width: 40%; /* Reducir el ancho para evitar desbordamiento */
 	height: 100%; /* Ajustar la altura al 100% */
 	z-index: 0;
 	transition: all 0.3s ease; /* Agregar transición para un cambio más suave */
 	align-self: flex-start; /* Alineación vertical arriba */
-	aspect-ratio: 1;
-	max-height: 800px;
+	aspect-ratio: 16/9;
+	filter: blur(2px);
+	border: 2px solid transparent; /* Borde transparente por defecto */
+    
   }
   #campeon h3{
 
@@ -170,17 +174,29 @@ File: Layout CSS
   .campeon-coleccion img {
 	width: 100%;
 	height: 100%;
-	filter: blur(0px);
+	
 	
   }
   
   /* Quitar el filtro de desenfoque al hacer hover */
-  #campeon:hover,
+  
   #coleccion:hover {
 	filter: blur(0px);
 	z-index: 1; /* Sobreponer sobre el otro elemento */
-	transform: scale(1.3); /* Aumentar ligeramente el tamaño al hacer hover */
+	transform: scale(1.1); /* Aumentar ligeramente el tamaño al hacer hover */
+	transform-origin: right;
+	border-color: goldenrod;
+    border-width: 2px;
 	
+}
+  #campeon:hover {
+	filter: blur(0px);
+	z-index: 1; /* Sobreponer sobre el otro elemento */
+	transform: scale(1.1); /* Aumentar ligeramente el tamaño al hacer hover */
+	transform-origin: left;
+	border-color: gold;
+	border-style: groove;
+    border-width: 2px;
   }
   
   /* Estilos adicionales para #coleccion */
