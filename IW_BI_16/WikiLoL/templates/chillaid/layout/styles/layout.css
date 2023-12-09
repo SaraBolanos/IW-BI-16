@@ -32,7 +32,7 @@ File: Layout CSS
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
 #pageintro{
-    padding-top: 15%;
+    padding-top: 10%;
 }/* 280px => 80px for #introblocks negative margin */
 #pageintro article{display:block;max-width:75%;margin:0 auto;text-align:center;margin-top: 20%;}
 #pageintro article p{display:block; max-width:75%; margin:0 auto;  text-align:center;}
@@ -320,7 +320,7 @@ hr, .borderedbox{border-color:#D7D7D7;}
 label span{color:#FF0000; background-color:inherit;}
 input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 
-.overlay{color:#FFFFFF; background-color:inherit;}
+.overlay{color:#FFFFFF; background-color:inherit;    mask-image: linear-gradient(rgb(0, 0, 0) 65%, rgba(0, 0, 0, 0) 98%);}
 .overlay::after{color:inherit; background-color:rgba(40,46,57,.7);/* #282E39 */}
 .overlay.light::after{background-color:rgba(151,169,189,.7);/* #97A9BD */}
 
@@ -343,7 +343,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .row0, .row0 a{}
 .row1{color:#FFFFFF; background-color:#000000;}
 .row2{color:#474747; background-color:#F4F4F4;}
-.row3{color:#474747; background-color:##282e39;}
+.row3{color:#bfbfbf; background-color:##282e39;}
 .row4{color:#A5A6AA; background-color:#000000;}
 .row5, .row5 a{color:#A5A6AA; background-color:#282E39;}
 .coloured{color:#FFFFFF; background-color:#97A9BD;}
