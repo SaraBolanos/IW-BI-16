@@ -27,10 +27,9 @@
             box-sizing: border-box;
 }
 
-.MagicScroll[data-mode="carousel"] {
-    background-color: pink;
+.MagicScroll a{
+    visibility: hidden;
 }
-
 
 .MagicScroll,
 .mcs-item,
