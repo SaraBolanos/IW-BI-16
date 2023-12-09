@@ -49,7 +49,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <article>
       <h3 class="heading">{{ object.nombre }}</h3>
-      <p>{{object.descripcion}}</p>
+      <h2 class= "precio"> {{object.precio}} RP</h2></h2>
       <footer><a class="" href="#"></a></footer>
     </article>
     <!-- ################################################################################################ -->
@@ -58,60 +58,18 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <main class="hoc container clear"> 
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-    <section id="introblocks">
-      <ul class="nospace group btmspace-80 elements elements-four">
-        <li class="one_quarter">
-          <article>
-            <img src="{{ habilidades.0.imagen }}" alt="{{ habilidades.0.nombre }}">
-            <h6 class="heading">{{ habilidades.0.nombre }}</h6>
-            <p>Q</p>
-          </article>
-        </li>
-        <li class="one_quarter">
-          <article>
-            <img src="{{ habilidades.1.imagen }}" alt="{{ habilidades.1.nombre }}">
-            <h6 class="heading">{{ habilidades.1.nombre }}</h6>
-            <p>W</p>
-          </article>
-        </li>
-        <li class="one_quarter">
-          <article>
-            <img src="{{ habilidades.2.imagen }}" alt="{{ habilidades.2.nombre }}">
-            <h6 class="heading">{{ habilidades.2.nombre }}</h6>
-            <p>E</p>
-          </article>
-        </li>
-        <li class="one_quarter">
-          <article>
-            <img src="{{ habilidades.3.imagen }}" alt="{{ habilidades.3.nombre }}">
-            <h6 class="heading">{{ habilidades.3.nombre }}</h6>
-            <p>R</p>
-          </article>
-        </li>
-      </ul>
-    </section>
-    <!-- ################################################################################################ -->
-    <div id= "SARA">
-      {% for skin in skins %}
-      <ul id="steps" class="roller">
-      <li>{{ skin.nombre }} </li>
-    </ul>
-    <div id="titles">
-      <ul class="roller">
-        <li>
-          <h2><img src=" {{ skin.imagen }}" alt="{{ skin.nombre }}"></h2>
-        </li>
-    </ul>
+<div class="campeon-coleccion">
+  
+  <div id="campeon"  >
+    <h3>CAMPEON</h3>
+    <img src="{{ skin.campeon.imagen }}" alt="fghj">
   </div>
-    {% endfor %}
-
-  </div>    
-  </section>
-
+  <div id="coleccion">
+    <h3>COLECCION</h3>
+    <img src="{{ skin.coleccion.imagen }}" alt="sdfghj">
+  </div>
+  
+</div>
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
@@ -120,54 +78,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->    
-<div class="bgded overlay light" style="background-image:url('{% static "chillaid/images/demo/backgrounds/01.png" %}');">
-  <section id="services" class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <p class="nospace font-xs">Quis leo hendrerit lectus morbi</p>
-      <h6 class="heading font-x2">Justo mauris tempus pharetra</h6>
-    </div>
-    <ul class="nospace group elements elements-three">
-      <li class="one_third">
-        <article><a href="#"><i class="fas fa-hourglass-half"></i></a>
-          <h6 class="heading">Sociis natoque penatibus</h6>
-          <p>Interdum at congue semper purus nullam quis odio id justo accumsan ullamcorper maecenas vel arcu nulla tincidunt elit ornare.</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><i class="fas fa-paw"></i></a>
-          <h6 class="heading">Magnis parturient montes</h6>
-          <p>Urna proin venenatis eros viverra ultrices fringilla lectus urna consequat erat eget scelerisque ligula felis nec neque nam.</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><i class="fas fa-sliders-h"></i></a>
-          <h6 class="heading">Nascetur ridiculus aenean</h6>
-          <p>Vitae ipsum vitae velit porttitor aliquam in quam aliquam ullamcorper sem a auctor dapibus nisi nunc vehicula nunc quis mattis.</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><i class="fas fa-tty"></i></a>
-          <h6 class="heading">Ullamcorper neque phasellus</h6>
-          <p>Pede turpis at elit nunc at urna sed ligula vivamus vel erat at diam imperdiet pharetra quisque justo turpis mattis ut vitae.</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><i class="fas fa-table"></i></a>
-          <h6 class="heading">Aliquet lacus nulla erat</h6>
-          <p>Tortor aenean leo ipsum elementum non cursus eu interdum ut risus proin risus nibh viverra eget lobortis feugiat egestas in nisl.</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><i class="fas fa-hand-holding-usd"></i></a>
-          <h6 class="heading">Aliquam volutpat curabitur</h6>
-          <p>Fusce dignissim neque vitae justo aenean ac urna et leo posuere pretium nunc bibendum enim quis imperdiet elementum dui dolor.</p>
-        </article>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -244,7 +155,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="bgded overlay row4" style="background-image:url('{% static "chillaid/images/demo/backgrounds/01.png" %}');">
+<div class="bgded overlay row4" >
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="one_quarter first">

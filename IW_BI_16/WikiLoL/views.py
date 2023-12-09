@@ -91,6 +91,7 @@ class SkinDetailView(DetailView):
     def get_context_data(self,*args, **kwargs):
         context = super(SkinDetailView,
             self).get_context_data(*args, **kwargs)
+        
         return context
 
 def listaSkins(request):
