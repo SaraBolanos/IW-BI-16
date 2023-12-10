@@ -79,78 +79,80 @@ Licence URI: https://www.os-templates.com/template-terms
 
 <!-- ################################################################################################ -->
   <section id="introblocks">
-    <ul class="nospace group btmspace-80 elements elements-four">
-      <li class="one_quarter">
-        <article class="ability" data-video="{{ habilidades.0.video}}"data-nombre="{{habilidades.0.nombre}}" data-descripcion="{{ habilidades.0.descripcion }}">
-          <img src="{{ habilidades.0.imagen }}" alt="{{ habilidades.0.nombre }}">
-          <h6 class="heading">{{ habilidades.0.nombre }}</h6>
-          <p>Q</p>
-        </article>
-      </li>
-      <li class="one_quarter">
-        <article class="ability" data-video="{{ habilidades.1.video }}"data-nombre="{{habilidades.1.nombre}}"data-descripcion="{{ habilidades.1.descripcion }}">
-          <img src="{{ habilidades.1.imagen }}" alt="{{ habilidades.1.nombre }}">
-          <h6 class="heading">{{ habilidades.1.nombre }}</h6>
-          <p>W</p>
-        </article>
-      </li>
-      <li class="one_quarter">
-        <article class="ability" data-video="{{ habilidades.2.video }}"data-nombre="{{habilidades.2.nombre}}"data-descripcion="{{ habilidades.2.descripcion }}">
-          <img src="{{ habilidades.2.imagen }}" alt="{{ habilidades.2.nombre }}">
-          <h6 class="heading">{{ habilidades.2.nombre }}</h6>
-          <p>E</p>
-        </article>
-      </li>
-      <li class="one_quarter">
-        <article class="ability" data-video="{{ habilidades.3.video }}"data-nombre="{{habilidades.3.nombre}}"data-descripcion="{{ habilidades.3.descripcion }}" >
-          <img src="{{ habilidades.3.imagen }}" alt="{{ habilidades.3.nombre }}">
-          <h6 class="heading">{{ habilidades.3.nombre }}</h6>
-          <p>R</p>
-        </article>
-      </li>
-    </ul>
-  </section>
- <!-- ################################################################################################ -->
-    <!-- Video Section -->
-    <section id="video-section">
-      <video id="abilityVideo" width="50%" height="auto" autoplay muted>
-        <source src="{{ habilidades.0.video }}" type="video/mp4">
-        Your browser does not support the video tag.
-       
-      </video>
-       <div id="texto-lateral" class="texto-lateral">
-          <p class="Titulo">{{habilidades.0.nombre}}</p>
-          <p>{{ habilidades.0.descripcion }}</p>
-      </div>
-      <div id="texto-titulo" class="texto-titulo">
-        <p >{{habilidades.0.nombre}}</p>
-       
+<section id="introblocks">
+  <ul class="nospace group btmspace-80 elements elements-four">
+    <li class="one_quarter">
+      <article class="ability ability0 selected" data-video="{{ habilidades.0.video}}"data-nombre="{{habilidades.0.nombre}}" data-descripcion="{{ habilidades.0.descripcion }}">
+        <img src="{{ habilidades.0.imagen }}" alt="{{ habilidades.0.nombre }}">
+        <h6 class="heading">{{ habilidades.0.tecla }}</h6>
+      </article>
+    </li>
+    <li class="one_quarter">
+      <article class="ability ability1" data-video="{{ habilidades.1.video }}"data-nombre="{{habilidades.1.nombre}}"data-descripcion="{{ habilidades.1.descripcion }}">
+        <img src="{{ habilidades.1.imagen }}" alt="{{ habilidades.1.nombre }}">
+        <h6 class="heading">{{ habilidades.1.tecla }}</h6>
+      </article>
+    </li>
+    <li class="one_quarter">
+      <article class="ability ability2" data-video="{{ habilidades.2.video }}"data-nombre="{{habilidades.2.nombre}}"data-descripcion="{{ habilidades.2.descripcion }}">
+        <img src="{{ habilidades.2.imagen }}" alt="{{ habilidades.2.nombre }}">
+        <h6 class="heading">{{ habilidades.2.tecla }}</h6>
+      </article>
+    </li>
+    <li class="one_quarter">
+      <article class="ability ability3" data-video="{{ habilidades.3.video }}"data-nombre="{{habilidades.3.nombre}}"data-descripcion="{{ habilidades.3.descripcion }}" >
+        <img src="{{ habilidades.3.imagen }}" alt="{{ habilidades.3.nombre }}">
+        <h6 class="heading">{{ habilidades.3.tecla }}</h6>
+      </article>
+    </li>
+  </ul>
+</section>
+<!-- ################################################################################################ -->
+  <!-- Video Section -->
+  <section id="video-section">
+    <video id="abilityVideo" width="50%" height="auto" autoplay muted>
+      <source src="{{ habilidades.0.video }}" type="video/mp4">
+      Your browser does not support the video tag.
+     
+    </video>
+     <div id="texto-lateral" class="texto-lateral">
+        <p class="Titulo">{{habilidades.0.nombre}}</p>
+        <p>{{ habilidades.0.descripcion }}</p>
     </div>
-    </section>
+    <div id="texto-titulo" class="texto-titulo">
+      <p >{{habilidades.0.nombre}}</p>
+     
+  </div>
+  </section>
 
-
-    
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-      $(document).ready(function() {  
-        $(".ability").click(function() {
-          var videoSource = $(this).data("video");
-          var nombre = $(this).data("nombre");
-          var descripcion = $(this).data("descripcion");
-      
-          $("#abilityVideo").attr("src", videoSource);
-          $("#abilityVideo")[0].load();
-          $("#abilityVideo")[0].play();
-      
-          // Cambiar el texto lateral con la descripción correspondiente
-          $(".texto-titulo").text(nombre);
-          $(".texto-lateral").text(descripcion);
-        });
+  <!-- ################################################################################################ -->
+  <!-- / main body -->
+  <div class="clear"></div>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function() {  
+      $(".ability").click(function() {
+        // Remove 'selected' class from all abilities
+        $(".ability").removeClass("selected");
+        
+        // Add 'selected' class to the clicked ability
+        $(this).addClass("selected");
+  
+        // Your existing code...
+        var videoSource = $(this).data("video");
+        var nombre = $(this).data("nombre");
+        var descripcion = $(this).data("descripcion");
+  
+        $("#abilityVideo").attr("src", videoSource);
+        $("#abilityVideo")[0].load();
+        $("#abilityVideo")[0].play();
+  
+        // Cambiar el texto lateral con la descripción correspondiente
+        $(".texto-titulo").text(nombre);
+        $(".texto-lateral").text(descripcion);
       });
-    </script>
+    });
+  </script>
 
 
 
