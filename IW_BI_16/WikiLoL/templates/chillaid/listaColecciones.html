@@ -81,147 +81,19 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper gradient">
-  <div class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <p class="nospace font-xs">Purus ut mi sed velit urna ut</p>
-      <h6 class="heading font-x2">Sapien posuere in iaculis</h6>
-    </div>
-    <ul class="nospace group team">
-      
-      {% for coleccion in object_list %}
-        {% if coleccion == object_list.0 %}
-          <li class="one_third first">
-            <figure><a class="imgover" href="#"><img src="{% static 'chillaid/images/demo/348x400.png'%}" alt=""></a>
-              <figcaption><strong><a href="{{ coleccion.get_absolute_url }}">{{coleccion.nombre}}</a></strong> <em>{{coleccion.fechaSalida}}</em></figcaption>
-            </figure>
-          </li>
 
-        {% else %}
-        <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="{% static 'chillaid/images/demo/348x400.png'%}" alt=""></a>
-            <figcaption><strong><a href="{{ coleccion.get_absolute_url }}">{{coleccion.nombre}}</a></strong> <em>{{coleccion.fechaSalida}}</em></figcaption>
-          </figure>
-        </li>
-        {%endif%}
-      {% endfor %}
-    </ul>
-    <!-- ################################################################################################ -->
-  </div>
-</div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper coloured">
-  <section id="testimonials" class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <p class="nospace font-xs">Maecenas ultrices faucibus felis</p>
-      <h6 class="heading font-x2">Nunc lacus nulla luctus duis</h6>
-    </div>
-    <article class="one_half first">
-      <figure class="clear"><img src="{% static 'chillaid/images/demo/100x100.png'%}" alt="">
-        <figcaption>
-          <h6 class="heading">D. Doe</h6>
-          <em>Adipiscing fusce eu velit</em></figcaption>
-      </figure>
-      <blockquote>Pulvinar tortor quis nisi in hac habitasse platea dictumst donec ac tellus fusce venenatis laoreet elit sed est tortor molestie in consectetuer fringilla suscipit ut odio ut ac.</blockquote>
-    </article>
-    <article class="one_half">
-      <figure class="clear"><img src="{% static 'chillaid/images/demo/100x100.png'%}" alt="">
-        <figcaption>
-          <h6 class="heading">E. Doe</h6>
-          <em>Mauris erat aliquam leo</em></figcaption>
-      </figure>
-      <blockquote>Orci vitae dolor scelerisque blandit morbi eu dui sed volutpat etiam leo leo bibendum vel dictum sed sollicitudin a mi pellentesque ligula nulla facilisi sed bibendum ornare.</blockquote>
-    </article>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <section class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <p class="nospace font-xs">Lorem aenean nunc aenean sagittis</p>
-      <h6 class="heading font-x2">Imperdiet massa maecenas</h6>
-    </div>
-    <ul id="latest" class="nospace group">
-      <li class="one_third first">
-        <article><a class="imgover" href="#"><img src="{% static 'chillaid/images/demo/348x261.png'%}" alt=""></a>
-          <ul class="nospace meta clear">
-            <li><i class="fas fa-user"></i> <a href="#">Admin</a></li>
-            <li><i class="fas fa-comments"></i> <a href="#">Comments (3)</a></li>
-          </ul>
-          <div class="excerpt">
-            <time datetime="2045-04-05T08:15+00:00">05 Apr 2045</time>
-            <p class="heading"><a href="#">Quam justo suscipit at blandit at blandit vitae tellus maecenas</a></p>
-          </div>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a class="imgover" href="#"><img src="{% static 'chillaid/images/demo/348x261.png'%}" alt=""></a>
-          <ul class="nospace meta clear">
-            <li><i class="fas fa-user"></i> <a href="#">Admin</a></li>
-            <li><i class="fas fa-comments"></i> <a href="#">Comments (6)</a></li>
-          </ul>
-          <div class="excerpt">
-            <time datetime="2045-04-04T08:15+00:00">04 Apr 2045</time>
-            <p class="heading"><a href="#">Commodo mauris a semper posuere sem arcu cursus felis non cursus</a></p>
-          </div>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a class="imgover" href="#"><img src="{% static 'chillaid/images/demo/348x261.png'%}" alt=""></a>
-          <ul class="nospace meta clear">
-            <li><i class="fas fa-user"></i> <a href="#">Admin</a></li>
-            <li><i class="fas fa-comments"></i> <a href="#">Comments (10)</a></li>
-          </ul>
-          <div class="excerpt">
-            <time datetime="2045-04-03T08:15+00:00">03 Apr 2045</time>
-            <p class="heading"><a href="#">Enim odio in odio suspendisse commodo suscipit nisi nam tellus</a></p>
-          </div>
-        </article>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row2">
-  <section id="ctdetails" class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <p class="nospace font-xs">Enim eleifend dignissim bibendum</p>
-      <h6 class="heading font-x2">Id tristique id metus nulla</h6>
-    </div>
-    <figure class="one_half first">
-      <ul class="nospace clear">
-        <li class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +00 (123) 456 7890</span></li>
-        <li class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> support@domain.com</span></li>
-        <li class="block clear"><a href="#"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Come visit us:</strong> Directions to <a href="#">our location</a></span></li>
-      </ul>
-    </figure>
-    <article class="one_half">
-      <h6 class="heading">Purus nullam arcu integer</h6>
-      <p class="nospace btmspace-15">Elementum nisi ac volutpat vestibulum enim mi tincidunt eros sed justo magna odio sed lacus ut non ante sit amet est luctus dictum ut dolor ac.</p>
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Newsletter:</legend>
-          <input type="text" value="" placeholder="Name">
-          <input type="text" value="" placeholder="Email">
-          <button type="submit" value="submit">Submit</button>
-        </fieldset>
-      </form>
-    </article>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -229,7 +101,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="one_quarter first">
-      <h1 class="logoname"><a href="index.html">Chill<span>a</span>id</a></h1>
+      <h1 class="logoname"><a href="index.html">Wiki<span>L</span>oL</a></h1>
       <p>Scelerisque facilisis sapien turpis facilisis libero eu viverra purus dui ac leo sed vitae diam morbi sed nibh in eget dolor phasellus rhoncus odio morbi elit nunc id elit donec elementum [<a href="#">&hellip;</a>]</p>
       <ul class="faico clear">
         <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
