@@ -48,8 +48,25 @@ Licence URI: https://www.os-templates.com/template-terms
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <article>
+     <div class="bloqueRareza">
+      {% if skin.rareza == 'Legendaria' %}
+      <img src="{% static 'chillaid/images/skinRarity/Legendary_Skin.webp' %}" alt="Legendary_Skin" >
+      {% elif skin.rareza == 'Epica' %}
+      <img src="{% static 'chillaid/images/skinRarity/Epic_Skin.webp' %}" alt="Epic_Skin" >
+      {% elif skin.rareza == 'Definitiva' %}
+      <img src="{% static 'chillaid/images/skinRarity/Ultimate_Skin.webp' %}" alt="Ultimate_Skin" >
+      {% elif skin.rareza == 'Mitica' %}
+      <img src="{% static 'chillaid/images/skinRarity/Hextech_Skin.webp' %}" alt="Mythic_Skin" >
+      {% else %}
+      
+       
+      <!-- Contenido predeterminado si ninguna opción coincide -->
+      {% endif %} 
+      <h2 class="{{ skin.rareza|lower }}">{{ object.rareza }}</h2>
+    </div>
       <h3 class="heading">{{ object.nombre }}</h3>
-      <h2 class= "precio"> {{object.precio}} RP</h2></h2>
+      <h2 class="precio">{{ object.precio }} RP</h2>
+      
       <footer><a class="" href="#"></a></footer>
     </article>
     <!-- ################################################################################################ -->
