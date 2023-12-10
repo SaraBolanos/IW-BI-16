@@ -119,15 +119,18 @@ Licence URI: https://www.os-templates.com/template-terms
       </ul>
     </figure>
     <article class="one_half">
-      <h6 class="heading">Purus nullam arcu integer</h6>
-      <p class="nospace btmspace-15">Elementum nisi ac volutpat vestibulum enim mi tincidunt eros sed justo magna odio sed lacus ut non ante sit amet est luctus dictum ut dolor ac.</p>
-      <form action="#" method="post">
+      <h6 class="heading">Newsletter</h6>
+      <p class="nospace btmspace-15">Subscribe to our newsletter</p>
+      <form id="subscribeForm" onsubmit="subscribe(); return false;" action="{% url 'subscribe' %}" method="post">
+        {% csrf_token %}
         <fieldset>
           <legend>Newsletter:</legend>
-          <input type="text" value="" placeholder="Name">
-          <input type="text" value="" placeholder="Email">
-          <button type="submit" value="submit">Submit</button>
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <button type="button" id="subscribeButton">Subscribe</button>
         </fieldset>
+
+
       </form>
     </article>
     <!-- ################################################################################################ -->
@@ -216,5 +219,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- Homepage specific -->
 <script src="{% static 'chillaid/layout/scripts/jquery.easypiechart.min.js' %}"></script>
 <!-- / Homepage specific -->
+<script src="{% static 'chillaid/layout/scripts/app.js' %}"></script>
 </body>
 </html>

@@ -3,15 +3,26 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views import View
 from django.views.generic.detail import DetailView
-
-# Create your views here.
 from django.http import HttpResponse
+from django.http import JsonResponse
+# Create your views here.
 
 from .models import Campeon, Habilidad, Coleccion, Skin
 
 
 class MainView(View):
     template_name = 'chillaid/main.html'
+
+
+    def post(self, request, *args, **kwargs):
+        # Handle form submission name = request.POST.get('name')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+    
+        print(f"New subscription: Name - {name}, Email - {email}")
+
+        # Return a JSON response indicating success
+        return JsonResponse({'success': True})
 
     def get_context_data(self, **kwargs):
         context = {
@@ -25,6 +36,7 @@ class MainView(View):
     def get(self, request, *args, **kwargs):
         context = self.get_context_data()
         return render(request, self.template_name, context)
+
 
 # ------ CAMPEONES -----
 

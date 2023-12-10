@@ -8,6 +8,7 @@ from django.conf.urls.static import static
 urlpatterns = [
 
    path('Main', MainView.as_view(), name = 'Main'),
+   path('Main/subscribe', MainView.as_view(), name='subscribe'),
    path('listaCampeones', CampeonesListView.as_view(), name='listaCamp'),
    path('listaColecciones', ColeccionesListView.as_view(), name='listaCol'),
    path('detalleCampeones/<int:pk>/', CampeonesDetailView.as_view(), name='detalleCamp'),
@@ -17,8 +18,6 @@ urlpatterns = [
    path('listaHab', views.listaHabilidad, name= 'listaHab' ),
    path('detalleHab/<int:id_habilidad>', views.detalleHabilidad, name= 'detalleHab' ),
    
-   
-
 
 ]
 
