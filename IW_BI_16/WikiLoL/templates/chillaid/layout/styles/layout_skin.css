@@ -144,13 +144,16 @@ File: Layout CSS
 /* ANDER */
 
 
-  
+  .bloqueTextoIntroSkin{
+	padding-top: 20%;
+  }
 
   .bloqueRareza {
 	display: flex;
 	flex-direction: row;
 	justify-content: center; 
 	align-items: center;
+	transform: scale(1.2);
   }
   .legendaria {
 	color: #FF4500; /* Cambia el color del texto para la rareza legendaria a dorado */
@@ -158,9 +161,11 @@ File: Layout CSS
 }
   
   .epica {
-	color: #00aef9; /* Cambia el color del texto para la rareza épica a azul */
+	color: #00C8FF; /* Cambia el color del texto para la rareza épica a azul */
 	font-weight: bold;
 	padding-left: 0.2%;
+	-webkit-text-stroke-color: #000000;
+	-webkit-text-stroke-width: 0px;
 }
   
   .definitiva {
@@ -196,9 +201,32 @@ File: Layout CSS
 	border: 2px solid transparent; /* Borde transparente por defecto */
     
   }
-  #campeon h3{
-
+  .campeonImagen,.coleccionImagen {
+	position: relative; /* Para alinear el texto sobre la imagen */
+	height: 100%;
+}
+.campeonImagen img,.coleccionImagen img{
 	
+}
+  .campeonTextoSobreImagen, .coleccionTextoSobreImagen {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: goldenrod;
+	padding: 5px 10px;
+	margin: 0;
+	font-size: 100%;
+	opacity: 0; /* Inicialmente oculto */
+  	transition: all 0.3s ease, font-size 0.3s ease; /* Agregar transición de suavizado */
+  }
+  .campeonImagen:hover .campeonTextoSobreImagen,.coleccionImagen:hover .coleccionTextoSobreImagen  {
+	opacity: 1; /* Mostrar al hacer hover sobre la imagen */
+	font-size: 300%;
+	
+}
+  .precio{
+	font-size: 200%;
   }
   
   /* Aplicar filtro de desenfoque por defecto */

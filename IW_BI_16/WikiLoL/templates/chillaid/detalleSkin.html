@@ -47,7 +47,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="bgded overlay" style="background-image:url('{{ object.imagen }}');">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <article>
+    <article class="bloqueTextoIntroSkin">
      <div class="bloqueRareza">
       {% if skin.rareza == 'Legendaria' %}
       <img src="{% static 'chillaid/images/skinRarity/Legendary_Skin.webp' %}" alt="Legendary_Skin" >
@@ -65,7 +65,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <h2 class="{{ skin.rareza|lower }}">{{ object.rareza }}</h2>
     </div>
       <h3 class="heading">{{ object.nombre }}</h3>
-      <h2 class="precio">{{ object.precio }} RP</h2>
+      <h3 class="precio">{{ object.precio }} RP</h2>
       
       <footer><a class="" href="#"></a></footer>
     </article>
@@ -79,12 +79,24 @@ Licence URI: https://www.os-templates.com/template-terms
   
   <div id="campeon"  >
     
-    <a href="{{ skin.campeon.get_absolute_url}}"><img src="{{ skin.campeon.imagen }}" alt="fghj"></a>
+    <a href="{{ skin.campeon.get_absolute_url}}" class="campeonImagenDebajoDeTexto">
+      <div class="campeonImagen">
+        <h3 class="campeonTextoSobreImagen">CAMPEON</h3>
+        <img src="{{ skin.campeon.imagen }}" alt="fghj">
+
+      </div>
+    </a>
     
   </div>
   <div id="coleccion">
     
-    <a href="{{ skin.coleccion.get_absolute_url}}"><img src="{{ skin.coleccion.imagen }}" alt="sdfghj"></a>
+    <a href="{{ skin.coleccion.get_absolute_url}}">
+      <div class="coleccionImagen">
+        <h3 class="coleccionTextoSobreImagen">COLECCION</h3>
+        <img src="{{ skin.coleccion.imagen }}" alt="sdfghj"></a>
+      </div>
+      
+      
     
   </div>
   
