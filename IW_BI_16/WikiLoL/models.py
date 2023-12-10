@@ -61,6 +61,7 @@ class Habilidad(models.Model):
     campeon = models.ForeignKey(Campeon, on_delete=models.CASCADE, related_name="habilidades")
     imagen = models.TextField(max_length=100)
     video = models.TextField(max_length=500, null = True, blank= True)
+    descripcion = models.TextField(max_length=1000, null = True, blank= True)
     def __str__(self):
         return self.nombre 
 
