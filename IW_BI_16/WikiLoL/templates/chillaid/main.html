@@ -31,13 +31,15 @@ Licence URI: https://www.os-templates.com/template-terms
     </div>
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
+      <div id="app">
       <ul class="clear">
         <li class="active"><a href="Main">Home</a></li>
         <li><a href="listaCampeones">Campeones</a></li>
         <li><a href="listaColecciones">Colecciones</a></li>
-        <li class="app"><h1>{{ likesTotales }} Likes</h1></li>
-        <li class="app"><button @click="incrementLikes">Me gusta</button></li>
+        <li><h1 v-text="likesTotales + ' Likes'"></h1></li>
+        <li><button @click="incrementLikes">Me gusta</button></li>
       </ul>
+      </div>
       <!-- ################################################################################################ -->
     </nav>
   </header>
