@@ -12,6 +12,12 @@ File: Layout CSS
 @import url("fontawesome-free/css/fontawesome-all.min.css");
 @import url("framework.css");
 
+
+
+body{
+	margin:0;
+	padding:0;
+  } 
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
 .row0, .row0 a{}
@@ -139,6 +145,57 @@ File: Layout CSS
 #comments textarea{overflow:auto;}
 #comments div{margin-bottom:15px;}
 #comments input[type="submit"], #comments input[type="reset"]{display:inline-block; width:auto; min-width:150px; margin:0; padding:8px 5px; cursor:pointer;}
+
+
+#video-section {
+	display: flex;
+	align-items: center;	
+	border:groove ;
+	border-color: goldenrod;
+	position: relative; /* Añadido: establece el contexto de posición */
+  }
+
+
+  #abilityVideo{
+	padding-bottom: 0.09%;
+}
+
+  
+  #texto-lateral {
+	text-transform: none;
+	margin-left: 10%;
+	margin-right: 4%;
+	font-size: 1.4rem;
+	line-height: normal;
+	font-weight: normal;
+	text-shadow: -2px -2px 1px #000;
+	z-index: 1; 
+	position: relative;
+  }
+  
+  #texto-titulo {
+	
+	text-shadow: -2px -2px 1px #000;
+	line-height: top;
+	text-transform: uppercase;
+	padding-bottom: 5%;
+	font-size: 1.8rem;
+	font-weight: bold;
+	position: absolute; 
+	top: 0; 
+	left: 0;
+	z-index: 2;
+  }
+  
+
+
+
+
+
+
+
+
+
 
 /* Sidebar */
 .container .sidebar{}
@@ -313,7 +370,10 @@ td{border-width:0 1px;}
 
 /* Colours
 --------------------------------------------------------------------------------------------------------------- */
-body{color:#A5A6AA; background-color:#282E39;}
+body{color:#A5A6AA; background-color:#282E39;
+	margin:0;
+	padding:0;
+  } 
 a{color:#97A9BD;}
 a:active, a:focus{background:transparent !important;}/* IE10 + 11 Bugfix - prevents grey background */
 hr, .borderedbox{border-color:#D7D7D7;}
@@ -465,6 +525,15 @@ table a, #comments a{background-color:inherit;}
 @media screen and (min-width:978px) and (max-width:1140px){
 	.hoc{max-width:95%;}
 }
+
+
+
+
+
+
+
+
+
 
 
 /* Mobile Devices
