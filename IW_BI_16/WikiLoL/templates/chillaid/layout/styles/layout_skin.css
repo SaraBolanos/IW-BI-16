@@ -197,7 +197,7 @@ File: Layout CSS
 	transition: all 0.3s ease; /* Agregar transición para un cambio más suave */
 	align-self: flex-start; /* Alineación vertical arriba */
 	aspect-ratio: 16/9;
-	filter: blur(2px);
+	filter:grayscale(0.7);
 	border: 2px solid transparent; /* Borde transparente por defecto */
     
   }
